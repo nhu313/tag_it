@@ -16,7 +16,8 @@ defmodule TagIt.Router do
   scope "/", TagIt do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", LinkController, :index
+    resources "/links", LinkController, except: [:new]
   end
 
   # Other scopes may use custom stacks.
